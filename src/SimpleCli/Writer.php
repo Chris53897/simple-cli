@@ -6,5 +6,5 @@ namespace SimpleCli;
 
 interface Writer
 {
-    public function write(string $text = '', string $color = null, string $background = null): void;
+    public function write(string $text = '', ?string $color = null, ?string $background = null): void;
 }

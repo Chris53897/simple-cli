@@ -86,7 +86,7 @@ class IniSetTest extends TraitsTestCase
 
             public array $output = [];
 
-            public function write(string $text = '', string $color = null, string $background = null): void
+            public function write(string $text = '', ?string $color = null, ?string $background = null): void
             {
                 $this->output[] = [$text, $color, $background];
             }

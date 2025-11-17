@@ -64,7 +64,7 @@ trait Options
      * @param string                                                                                                 $name
      * @param string|null                                                                                            $value
      */
-    private function enableBooleanOption(array $definition, string $name, string $value = null): void
+    private function enableBooleanOption(array $definition, string $name, ?string $value = null): void
     {
         if ($definition['type'] !== 'bool') {
             throw new InvalidArgumentException(
@@ -88,7 +88,7 @@ trait Options
      *
      * @param-out array{type: ?string, property: string, values: ?array, description: string, names: array<string>|null} $optionDefinition
      */
-    private function setOption(string $name, string $value = null, ?array &$optionDefinition = null): void
+    private function setOption(string $name, ?string $value = null, ?array &$optionDefinition = null): void
     {
         $definition = $this->getOptionDefinition($name);
         $name = strlen($name) === 1 ? "-$name" : "--$name";
@@ -115,7 +115,7 @@ trait Options
      *
      * @param-out array{type: ?string, property: string, values: ?array, description: string, names: array<string>|null} $optionDefinition
      */
-    private function parseOption(string $option, array &$optionDefinition = null): void
+    private function parseOption(string $option, ?array &$optionDefinition = null): void
     {
         $parts = explode('=', $option, 2);
         $name = $parts[0];
